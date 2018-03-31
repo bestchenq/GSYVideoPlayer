@@ -53,21 +53,21 @@
 #### A、直接引入
 ```
 //完整版引入
-compile 'com.shuyu:GSYVideoPlayer:4.1.0'
+compile 'com.shuyu:GSYVideoPlayer:4.1.1'
 
 ```
 
 #### B、添加java和你想要的so支持：
 
 ```
-compile 'com.shuyu:gsyVideoPlayer-java:4.1.0'
+compile 'com.shuyu:gsyVideoPlayer-java:4.1.1'
 
 //根据你的需求
-compile 'com.shuyu:gsyVideoPlayer-armv5:4.1.0'
-compile 'com.shuyu:gsyVideoPlayer-armv7a:4.1.0'
-compile 'com.shuyu:gsyVideoPlayer-arm64:4.1.0'
-compile 'com.shuyu:gsyVideoPlayer-x64:4.1.0'
-compile 'com.shuyu:gsyVideoPlayer-x86:4.1.0'
+compile 'com.shuyu:gsyVideoPlayer-armv5:4.1.1'
+compile 'com.shuyu:gsyVideoPlayer-armv7a:4.1.1'
+compile 'com.shuyu:gsyVideoPlayer-arm64:4.1.1'
+compile 'com.shuyu:gsyVideoPlayer-x64:4.1.1'
+compile 'com.shuyu:gsyVideoPlayer-x86:4.1.1'
 
 ```
 
@@ -77,9 +77,9 @@ A、B普通版本支持263/264/265等，对于mpeg编码会有声音无画面情
 C 引入的so支持mpeg编码和其他补充协议，但是so包相对变大。
  
 ```
-compile 'com.shuyu:gsyVideoPlayer-java:4.1.0'
+compile 'com.shuyu:gsyVideoPlayer-java:4.1.1'
 
-compile 'com.shuyu:gsyVideoPlayer-ex_so:4.1.0'
+compile 'com.shuyu:gsyVideoPlayer-ex_so:4.1.1'
 
 ```
 
@@ -130,6 +130,20 @@ compile 'com.shuyu:gsyVideoPlayer-ex_so:4.1.0'
 
 ## 五、近期版本
 
+### 4.1.1 (2018-04-01)
+* 1、update support lib to 26.0.2 
+* 2、修复了渲染层在某些条件下，截图时返回大小不对问题。
+* 3、一些细节的优化处理。
+* 4、增加Manager的isFullState方法
+```
+ /*
+  * 当前是否全屏状态
+  *
+  * @return 当前是否全屏状态， true代表是。
+  */
+ public static boolean isFullState(Activity activity)
+```
+
 ### 4.1.0 (2018-02-26)
 * 1、update to ijk 0.8.8
 * 2、去除cache模块的log库依赖
@@ -154,30 +168,6 @@ compile 'com.shuyu:gsyVideoPlayer-ex_so:4.1.0'
  public void onVideoResume(boolean seek)
 
 ```
-
-### 4.0.0-beat1（2018-02-06）
-* 1、新增简单片头广告支持。
-`GSYSampleADVideoPlayer 与 DetailADPlayer`
-* 2、优化了ListGSYVideoPlayer、增加`playNext()`接口。
-* 3、优化代码结构，调整部分API接口（稍微调整下，偶尔有和旧版本不兼容的，参考源码和demo修改下方法名即可）。
-* 4、增加GSYVideoHelper视频帮助类，更加节省资源。
-* 5、增加GSYSampleCallBack节省继承，优化GSYVideoProgressListener的回调。
-* 6、增加GSYVideoViewBridge、重载`getGSYVideoManager()`方法实现自己的Manager。
-* 7、支持自定义渲染层，demo中`CustomRenderVideoPlayer`演示如何设置自定义渲染层。
-* 8、`ListMultiVideoActivity`和`MultiSampleVideo`演示如何同时播放多个视频。
-* 9、`DetailADPlayer2`和`ListADVideoActivity`演示广告与中间插入广告支持。
-* 10、增加音频焦点方法。
-```
-/**
-  * 长时间失去音频焦点，暂停播放器
-  *
-  * @param releaseWhenLossAudio 默认true，false的时候只会暂停
-  */
- public void setReleaseWhenLossAudio(boolean releaseWhenLossAudio)
-
-```
-
-
 
 
 ### 更多版本请查阅：[版本更新说明](https://github.com/CarGuo/GSYVideoPlayer/blob/master/UPDATE_VERSION.md)
